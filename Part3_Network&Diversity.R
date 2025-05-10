@@ -5,7 +5,6 @@
 
 # Package sna is one of the two packages that we can use to calculate network metrics and create them
 library(sna)
-library(bipartite)
 library(igraph)
 
 # Network representation
