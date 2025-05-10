@@ -233,9 +233,10 @@ n %v% "Log_Ratio" <- bind_cols(Original[-lost_sites,],Lost) %>%
 ggplot(n, layout=as.matrix(xy.Ponds[-lost_sites,3:4]),
        aes(x = x, y = y, xend = xend, yend = yend))+
   geom_edges(colour="grey60", linewidth=0.1) +
-  geom_nodes(aes(color = Log_Ratio),shape=16,size=3)+
-  scale_color_gradient2(low = "white",mid = "orange",high = "red",midpoint = 0.2)+
+  geom_nodes(aes(color = Log_Ratio,alpha=abs(Log_Ratio)),shape=16,size=3)+
+  scale_color_gradient2(low = "red",mid = "orange",high = "white",midpoint = -0.3)+
   labs(x="",y="")+
+  guides(alpha="none")+
   theme_void()
 
 
